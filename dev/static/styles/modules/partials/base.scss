@@ -1,0 +1,82 @@
+@import '../../core.scss';
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+
+  // Set global fonts here
+}
+
+* {
+  position: relative;
+}
+
+html {
+  // MAIN REM VALUE
+  font-size: 10px;
+
+}
+
+body {
+  &.noscroll {
+    height: 100vh;
+    overflow: hidden;
+  }
+}
+
+.hidden {
+  display: none !important;
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 122rem;
+  padding: 0 3rem;
+
+}
+
+
+section {
+  overflow: hidden;
+  z-index: 1;
+}
+
+
+.grid-x3 {
+  display: grid;
+  grid-gap: 2rem;
+  @include minw( $lg-mob ) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include minw( $tablet ) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 3rem;
+  }
+}
+
+.grid-x2 {
+  display: grid;
+  grid-gap: 2rem;
+  @include minw( $lg-mob ) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include minw( $tablet ) {
+    grid-gap: 3rem;
+  }
+}
+
+
+.grid-x4 {
+  display: grid;
+  @include minw( $lg-mob ) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include minw( $tablet ) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+

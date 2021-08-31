@@ -1,0 +1,59 @@
+%dfcol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+%absPseudo {
+  content: "";
+  display: block;
+  position: absolute;
+}
+
+%absVertAlign {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+%abs-center-pos {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+%flex-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+%icon-bg {
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+%img-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+%img-contain {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+%absCentred {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+%default-block {
+  border-radius: 1.5rem ;
+  overflow: hidden ;
+}

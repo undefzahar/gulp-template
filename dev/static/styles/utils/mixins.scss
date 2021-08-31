@@ -1,0 +1,32 @@
+@import 'vars';
+
+@mixin size($a,$b: $a) {
+  width: $a;
+  height: $b;
+}
+
+
+
+
+@mixin maxw($media) {
+  @media only screen and(max-width: $media) {
+      @content;
+  }
+}
+
+@mixin minw($media) {
+  @media only screen and(min-width: $media) {
+      @content;
+  }
+}
+@mixin minh($media) {
+  @media only screen and(min-height: $media) {
+      @content;
+      }
+}
+@mixin maxh($media) {
+  @media only screen and(max-height: $media) {
+      @content;
+      }
+}
+
