@@ -1,6 +1,6 @@
 <div align="center">
   <img width="200" height="200" src="https://upload.wikimedia.org/wikipedia/commons/7/72/Gulp.js_Logo.svg">
-  <h1>Gulp WP starter template</h1>
+  <h1>Gulp стартовая сборка под Wordpress</h1>
   <p>
     Компиляция HTML, SCSS, JS, вывод обычных и минифицированых файлов, CSS префиксы, сжатие/конвертация картинок в webp, для img генеруруется обертка picture, вывод webp, конвертация шрифтов в WOFF, WOFF2, быстрая выгрузка на FTP сервер, собрать в ZIP архив, вывод ошибок, локальный сервер и прочее
   </p>
