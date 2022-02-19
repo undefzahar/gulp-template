@@ -1,14 +1,13 @@
-</div>
-   
-    <footer class="footer">
-
-    </footer> 
-
-
+    </div>
 </main>
 
-<?php wp_footer(); ?>
+<footer class="footer">
+    <div class="container">
+        
+    </div>
+</footer> 
 
+<?php wp_footer(); ?>
 
 </body>
 </html>

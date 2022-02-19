@@ -30,8 +30,5 @@ function create_taxonomy()
         'show_in_quick_edit' => null, // по умолчанию значение show_ui
     ));
 
-  
-   
-
-  
+    
 }

@@ -1,7 +1,6 @@
 <?php 
-
-
-function super_filter_tax_q($query_args_name) {
+function super_filter_tax_q($query_args_name)
+{
   session_start();
 
   $needle = $_POST['needle'];
@@ -38,7 +37,8 @@ function super_filter_tax_q($query_args_name) {
 
 }
 
-function super_filter_meta_q($query_args_name) {
+function super_filter_meta_q($query_args_name)
+{
   session_start();
 
   // $needle = $_POST['needle'];
@@ -75,8 +75,8 @@ function super_filter_meta_q($query_args_name) {
 
 }
 
-
-function upadte_super_filter( $query_args_name , $filter_name, $query_type = 'tax_query' ) {
+function update_super_filter( $query_args_name , $filter_name, $query_type = 'tax_query' )
+{
   session_start();
   
   $temp_args = $_SESSION[$query_args_name]; // get current arguments
@@ -123,8 +123,6 @@ function upadte_super_filter( $query_args_name , $filter_name, $query_type = 'ta
   die();
 }
 
-
-
 function update_super_filter_max_posts()
 {
   session_start();
@@ -141,7 +139,8 @@ add_action('wp_ajax_update_super_filter_max_posts', 'update_super_filter_max_pos
 add_action('wp_ajax_nopriv_update_super_filter_max_posts', 'update_super_filter_max_posts');
 
 
-function super_filter_clear_filters_query() {
+function super_filter_clear_filters_query()
+{
   session_start();
   $filter_args_name = $_POST['filter_args_name'];
   $_SESSION[$filter_args_name]['tax_query'] = [
@@ -155,8 +154,6 @@ function super_filter_clear_filters_query() {
 
   $temp_args = $_SESSION[$filter_args_name];
 
-
-
   $temp_args['posts_per_page'] = -1;
   // unset($temp_args['posts_per_page']);
   unset($temp_args['paged']);
@@ -167,5 +164,4 @@ function super_filter_clear_filters_query() {
   $query = new WP_Query( $temp_args );
 
   return $query;
-
 }

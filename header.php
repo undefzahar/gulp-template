@@ -9,16 +9,15 @@
 	<title><?php wp_title(); ?></title>
 
 	<?php wp_head(); ?>
-
-
 </head>
 
 <body>
-
-
-	<main <?php body_class(); ?>>
-
-		<header class="header">
+	
+<header class="header">
+	<div class="container">
 		
-		</header>
-		<div class='main-wrap'>
+	</div>
+</header>
+
+<main <?php body_class(); ?>>
+	<div class='main-wrap'>

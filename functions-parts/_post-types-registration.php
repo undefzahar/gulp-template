@@ -42,9 +42,5 @@ function init_post_types()
         'menu_icon' => 'dashicons-analytics'
     ));
 
-    
-    
-    
-
 
 }
