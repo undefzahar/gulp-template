@@ -17,14 +17,15 @@ export const path = {
 		js: `${srcFolder}/js/**/*.js`,
 		images: `${srcFolder}/img/**/*.{jpg,JPG,jpeg,JPEG,png,PNG,gif,webp,WEBP}`,
 		svg: `${srcFolder}/img/**/*.svg`,
-		scss: `${srcFolder}/styles/**/*.{scss,css}`,
+		scss: `${srcFolder}/styles/**/*.{sass,scss,css}`,
+		scss_ignore: `!${srcFolder}/styles/utils/*.{sass,scss,css}`,
 		html: `${srcFolder}/*.html`,
 		files: `${srcFolder}/files/**/*.*`,
 		svgicons: `${srcFolder}/svgicons/*.svg`,
 	},
 	watch: {
 		js: `${srcFolder}/js/**/*.js`,
-		scss: `${srcFolder}/styles/**/*.{scss,css}`,
+		scss: `${srcFolder}/styles/**/*.{sass,scss,css}`,
 		html: `${srcFolder}/**/*.html`,
 		images: `${srcFolder}/img/**/*.{jpg,JPG,jpeg,JPEG,png,PNG,gif,webp,WEBP}`,
 		files: `${srcFolder}/files/**/*.*`
