@@ -2,7 +2,6 @@
 function hide_show_adminpanel() { ?>
   <style>
     #wpadminbar {
-      /* TEMPORARY FOR DEV */
       /* display: none !important; */
       top: -32px;
       transition: all .2s linear;
@@ -37,7 +36,7 @@ function hide_show_adminpanel() { ?>
 }
 
 if (is_user_logged_in()) :
-    // add_action('wp_footer', 'hide_show_adminpanel');
+  add_action('wp_footer', 'hide_show_adminpanel');
 endif;
 
 // Remove auto p from Contact Form 7 shortcode output

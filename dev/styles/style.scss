@@ -1,49 +1,15 @@
-@import "fonts";
 @import "core";
+@import "fonts";
 
-body {
-  font-family: CormorantUpright;
-}
+@import "partitials/base";
+@import "partitials/bttns";
+@import "partitials/typography";
 
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  outline: none;
+@import "modules/header";
 
-  // Set global fonts here
-}
+@import "modules/readme";
+@import "modules/example";
+// @import "modules/example-2";
+// @import "modules/example-3";
 
-* {
-  position: relative;
-}
-
-html {
-  // MAIN REM VALUE
-  font-size: 10px;
-}
-
-body {
-  &.noscroll {
-    height: 100vh;
-    overflow: hidden;
-  }
-}
-
-.hidden {
-  display: none !important;
-}
-
-.container {
-  margin: 0 auto;
-  width: 100%;
-  max-width: 122rem;
-  padding: 0 3rem;
-}
-
-section {
-  overflow: hidden;
-  z-index: 1;
-}
+@import "modules/footer";

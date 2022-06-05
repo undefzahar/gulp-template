@@ -1,22 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-@@include('html/head.html',{
-"title":"Главная"
-})
+@@include('modules/header.html', {"title": "Template"})
 
-<body>
-	@@include('html/header.html',{})
+@@include('modules/readme.html')
+@@include('modules/example.html')
 
-	<main>
-		<img src="img/test.svg" alt="">
-
-		<h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae repellendus quae eius recusandae est
-			accusamus ab. Sint laborum voluptates voluptatum quis, id quod hic nobis eaque facere consectetur odio aliquid!
-		</h1>
-	</main>
-
-	@@include('html/footer.html',{})
-	<script src="js/main.min.js"></script>
-</body>
-
-</html>
+@@include('modules/footer.html')

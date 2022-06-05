@@ -1,0 +1,194 @@
+@import "../core";
+@import "typography";
+@import "bttns";
+
+body {
+  font-family: Arial, sans-serif;
+
+  &.menu-open {
+    overflow: hidden;
+    height: 100vh;
+  }
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+
+  // Set global fonts here
+}
+
+* {
+  position: relative;
+  transition: 0.2s ease-in-out;
+}
+
+html {
+  // MAIN REM VALUE
+  font-size: 10px;
+}
+
+body {
+  &.noscroll {
+    height: 100vh;
+    overflow: hidden;
+  }
+}
+
+.hidden {
+  display: none !important;
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 122rem;
+  padding: 0 2rem;
+}
+
+section {
+  overflow: hidden;
+  z-index: 1;
+  padding: 6rem 0;
+}
+
+.grid-2 {
+  @include minw($sm-tablet) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  @include minw($sm-pc) {
+    justify-content: flex-start;
+  }
+
+  & > div + & > div {
+    margin-top: 1.5rem;
+  }
+
+
+  @include minw($sm-tablet) {
+    & > div {
+      width: calc(50% - .75rem);
+      
+      &:nth-child(-n + 2) {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+.grid-4 {
+  @include minw($sm-tablet) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  @include minw($sm-pc) {
+    justify-content: flex-start;
+  }
+
+  & > div + & > div {
+    margin-top: 1rem;
+  }
+
+
+  @include minw($sm-tablet) {
+    & > div {
+      width: calc(50% - .5rem);
+      
+      &:nth-child(-n + 2) {
+        margin-top: 0;
+      }
+    }
+  }
+
+  @include minw($sm-pc) {
+    & > div {
+      width: calc(25% - .75rem);
+      
+      &:nth-child(-n + 4) {
+        margin-top: 0;
+      }
+
+      &:not(:nth-child(4n + 4)) {
+        margin-right: 1rem;
+      }
+    }
+  }
+}
+
+main {
+  padding-top: 7.4rem;
+}
+
+
+.grid-2,
+.grid-3,
+.grid-4 {
+  & > div,
+  & > a {
+    &:not(:first-child) {
+      margin-top: 2rem;
+    }
+  }
+}
+
+
+@media only screen and (min-width: 1024px) {
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .grid-2 {
+    justify-content: space-between;
+
+    & > div,
+    & > a {
+      width: calc(50% - 1.2rem);
+      
+      &:nth-child(-n+2) {
+        margin-top: 0;
+      }
+    }
+  }
+
+  .grid-3 {
+    & > div,
+    & > a {
+      width: calc(33.33% - 1.6rem);
+      
+      &:nth-child(-n+3) {
+        margin-top: 0;
+      }
+  
+      &:not(:nth-child(3n+3)) {
+        margin-right: 2.4rem;
+      }
+    }
+  }
+
+  .grid-4 {
+    & > div,
+    & > a {
+      width: calc(25% - 1.5rem);
+      
+      &:nth-child(-n+4) {
+        margin-top: 0;
+      }
+  
+      &:not(:nth-child(4n+4)) {
+        margin-right: 2rem;
+      }
+    }
+  }
+}

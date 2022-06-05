@@ -42,5 +42,42 @@ function init_post_types()
         'menu_icon' => 'dashicons-analytics'
     ));
 
+    // // Example
+    // register_post_type('reviews', array(
+    //     'label' => null,
+    //     'labels' => array(
+    //         'name' => 'Отзывы',
+    //         'singular_name' => 'Отзывы',
+    //         'add_new' => 'Додать отзыв',
+    //         'add_new_item' => 'Добавление',
+    //         'edit_item' => 'Редактировать',
+    //         'new_item' => 'Новый отзыв',
+    //         'view_item' => 'Посмотреть',
+    //         'search_items' => 'Поиск',
+    //         'not_found' => 'Не найдено',
+    //         'not_found_in_trash' => 'В корзине не найдено',
+    //         'parent_item_colon' => '',
+    //         'menu_name' => 'Отзывы',
+    //     ),
+    //     'description' => '',
+    //     'public' => false,
+    //     'publicly_queryable' => true,
+    //     'exclude_from_search' => true,
+    //     'show_ui' => true,
+    //     'show_in_menu' => true,
+    //     'show_in_admin_bar' => null,
+    //     'show_in_nav_menus' => false,
+    //     'show_in_rest' => true,
+    //     'rest_base' => null,
+    //     'menu_position' => 4,
+    //     'menu_icon' => null,
+    //     'hierarchical' => true,
+    //     'supports' => array('title', 'author', 'revisions'),
+    //     'taxonomies' => array(),
+    //     'has_archive' => false,
+    //     'rewrite' => false,
+    //     'query_var' => true,
+    //     'menu_icon' => 'dashicons-format-aside'
+    // ));
 
 }

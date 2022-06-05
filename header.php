@@ -15,9 +15,16 @@
 	
 <header class="header">
 	<div class="container">
-		
+		<a href="/" class="header__logo">
+			Logo
+		</a>
+
+		<ul class="header__menu">
+			<li>Home</li>
+			<li>About</li>
+			<li>Contact</li>
+		</ul>
 	</div>
 </header>
 
 <main <?php body_class(); ?>>
-	<div class='main-wrap'>

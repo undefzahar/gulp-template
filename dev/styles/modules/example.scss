@@ -1,0 +1,54 @@
+@import "../core";
+
+.example {
+	background-color: rgb(229, 229, 229);
+ 
+	.container {
+	  background-color: rgb(177, 177, 177);
+	}
+ 
+	&__title {
+	  text-align: center;
+	  font-size: 3.6rem;
+	}
+ 
+	&__title + &__wrap {
+	  margin-top: 2rem;
+	}
+ 
+	&__item {
+		background: #fff;
+		padding: 2rem;
+		border: .1rem solid #000;
+
+		&-img {
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+
+		&-img + &-title {
+			margin-top: 2rem;
+		}
+	
+		&-title {
+			font-size: 2.2rem;
+			font-weight: bold;
+		}
+	
+		&-title + &-descr {
+			margin-top: 0.8rem;
+		}
+	
+		&-descr {
+			font-size: 1.8rem;
+			color: rgb(46, 46, 46);
+		}
+	}
+ 
+	&__bttn {
+	  margin-top: 2rem;
+	}
+}

@@ -1,0 +1,158 @@
+@import "../core";
+
+.header {
+	position: fixed;
+	width: 100%;
+	padding: 2rem 0;
+	background-color: rgba(19, 19, 35, 0.8);
+	-webkit-backdrop-filter: blur(4rem);
+	backdrop-filter: blur(4rem);
+	z-index: 99;
+	background-color: #000;
+
+	&--hide {
+		transform: translate(0, -100%);
+	}
+
+	&--scrolled {
+		padding: 1.5rem 0;
+	}
+
+	.container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__logo {
+		z-index: 200;
+		transition: .5s linear;
+	}
+
+	&__burger {
+		display: block;
+		width: 3.2rem;
+		height: 3.2rem;
+		z-index: 200;
+
+		@include minw($sm-pc) {
+			display: none;
+		}
+
+		&:before,
+		&:after {
+			content: "";
+			position: absolute;
+			width: 2.4rem;
+			height: 0.2rem;
+			left: 50%;
+			background-color: #fff;
+			transform: translate(-50%, -50%);
+			transition: top 0.15s linear 0.15s, transform 0.15s linear, background 0.3s linear, -webkit-transform 0.15s linear;
+		}
+
+		&:before {
+			top: calc(50% - 0.35rem);
+		}
+		&:after {
+			top: calc(50% + 0.35rem);
+		}
+	}
+
+	&__menu {
+		position: fixed;
+		top: 0;
+		left: 100%;
+		width: 100vw;
+		height: 100vh;
+		background-color: #fff;
+		z-index: 100;
+		transition: left 0.3s linear;
+		padding: 7rem 1.5rem 0;
+
+		@include minw($sm-pc) {
+			width: auto;
+			height: auto;
+			position: static;
+			padding: 0;
+			background-color: transparent;
+			margin-left: auto;
+		}
+	}
+
+	&__menu-list {
+		list-style-type: none;
+
+		@include minw($sm-pc) {
+			display: flex;
+		}
+
+		.menu-item {
+			a {
+				display: block;
+				text-align: center;
+				text-decoration: none;
+				color: #000;
+				font-size: 1.8rem;
+				font-weight: bold;
+				padding: 2.4rem 0;
+
+				@include minw($sm-pc) {
+					color: #fff;
+					padding: 1rem;
+				}
+			}
+
+			&:not(:first-of-type) {
+				border-top: 0.1rem solid rgba(114, 117, 152, 0.2);
+
+				@include minw($sm-pc) {
+					border-top: 0;
+					margin-left: 2rem;
+				}
+			}
+		}
+
+		
+	}
+}
+
+@include maxw($sm-pc) {
+	body.menu-open .header {
+		&__logo {
+			-webkit-filter: invert(1);
+			filter: invert(1);
+		}
+
+		&__menu {
+			left: 0;
+		}
+	
+		&__burger {
+			&::before,
+			&::after {
+				background-color: #000;
+				-webkit-transition: top .15s linear, background .3s linear, -webkit-transform .15s linear .15s;
+				transition: top .15s linear, background .3s linear, -webkit-transform .15s linear .15s;
+				-o-transition: top .15s linear, transform .15s linear .15s, background .3s linear;
+				transition: top .15s linear, transform .15s linear .15s, background .3s linear;
+				transition: top .15s linear, transform .15s linear .15s, background .3s linear, -webkit-transform .15s linear .15s;
+		  }
+	
+		  &:before {
+			top: 50%;
+			-webkit-transform: translate(-50%, -50%) rotate(45deg);
+			-ms-transform: translate(-50%, -50%) rotate(45deg);
+			transform: translate(-50%, -50%) rotate(45deg);
+		  }
+	
+		  &:after {
+			top: 50%;
+			-webkit-transform: translate(-50%, -50%) rotate(-45deg);
+			-ms-transform: translate(-50%, -50%) rotate(-45deg);
+			transform: translate(-50%, -50%) rotate(-45deg);
+		  }
+		}
+		
+	}
+}
