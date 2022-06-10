@@ -1,29 +1,41 @@
-<div align="center">
-  <img width="200" height="200" src="https://upload.wikimedia.org/wikipedia/commons/7/72/Gulp.js_Logo.svg">
-  <h1>Gulp стартовая сборка под Wordpress</h1>
-  <p>
-    Компиляция HTML, SCSS, JS, вывод обычных и минифицированых файлов, CSS префиксы, сжатие/конвертация картинок в webp, для img генеруруется обертка picture, вывод webp, конвертация шрифтов в WOFF, WOFF2, быстрая выгрузка на FTP сервер, собрать в ZIP архив, вывод ошибок, локальный сервер и прочее
-  </p>
-</div>
+<img width="200" height="200" src="https://upload.wikimedia.org/wikipedia/commons/7/72/Gulp.js_Logo.svg">
 
+## Gulp стартовая сборка для Wordpress
 
-## Настройка:
+### Что есть в сборке:
 
-``` bash
+- компилятор для препроцессора scss/sass;
+- минификация готового css;
+- автопрефиксер;
+- импорт одних файлов в другие, который позволяет собирать html из модулей;
+- конвертация шрифтов из ttf в woff и woff2;
+- автоматическое формирование и подключение @font-face;
+- для живого обновления страниц - browsersync;
+- сжатие изображений;
+- создание svg-спрайтов и конвертация svg в background-image;
+- конвертация растровых изображений в webp;
+- базовая настройка для Wordpress
+- Структура php файлов с примерами
+- выгрузка на FTP сервер
+- собрать ZIP архив
+
+### Настройка:
+
+```bash
 # Установить зависимости:
 npm i
 
 # Запустить сборщик (http://localhost:3000/)
-npm run dev
+npm run dev или gulp
 
-# Собрать проект (в папку build/) 
+# Собрать проект
 npm run build
 
 # Собрать проект в ZIP архив
 npm run deployZIP
 
 # Выгрузить на FTP (gulp/config/ftp.js прописать доступы)
-npm run deployFTP 
+npm run deployFTP
 
 # Собрать svg иконки в спрайт, генерируется html файл с примерами
 npm run svgSprive
@@ -31,65 +43,128 @@ npm run svgSprive
 ```
 
 ## Структура:
-Development
-* `dev/index.html` - Главный HTML файл
-* `dev/html/` - HTML компоненты
-* `dev/styles/` - CSS/SCSS библиотеки, компоненты, переменные, миксины, шрифты, стили модулей, стили страниц
-* `dev/img` - Изображения
-* `dev/js` - Библиотеки и скрипты
-* `dev/fonts` - Шрифты
 
-Production
-* `build/index.html` - Главный HTML файл 
-* `build/styles` - CSS стили
-* `build/img` - Изображения
-* `build/js` - Скрипты
-* `build/fonts` - Шрифты
+##### Development
 
-Wordpress
+- `dev/index.html` - Главный HTML файл
+- `dev/modules/` - HTML компоненты
+- `dev/styles/` - CSS/SCSS библиотеки, компоненты, переменные, миксины, шрифты, стили модулей, стили страниц
+- `dev/img` - Изображения
+- `dev/js` - Библиотеки и скрипты
+- `dev/fonts` - Шрифты
 
-* `functions.php` - Подключение файлов functions-parts/, настройка темы, дополнительные функции, изменение параметров
-* `functions-parts/ajax/` - Файлы с ajax подключаемые в _ajax.php
-* `functions-parts/super-filter/` - Функции для фильтра
-* `functions-parts/_ajax.php` - Основной файл с ajax запросами
-* `functions-parts/_assets.php` - Подключение стилей и скриптов
-* `functions-parts/_breadcrumbs.php` - Хлебные крошки
-* `functions-parts/_custom-functions.php` - Вспомагальные функции
-* `functions-parts/_hooks.php` - Хуки
-* `functions-parts/_post-types-registration.php` - Регистрация пост тайпов
-* `functions-parts/_taxonomies-registration.php` - Регистрация таксономий
-* `functions-parts/Mobile_Detect.php` - Определеение типа устройств
+##### Production
 
-<div align="center">
-  <h2>Импорт</h2>
-</div>
+- `build/index.html` - Главный HTML файл
+- `build/css` - CSS стили
+- `build/img` - Изображения
+- `build/js` - Скрипты
+- `build/fonts` - Шрифты
 
-## HTML компоненты:
+##### Wordpress
 
-``` js
+- `functions.php` - Подключение файлов functions-parts/, настройка темы, дополнительные функции, изменение параметров
+- `functions-parts/ajax/` - Файлы с ajax подключаемые в \_ajax.php
+- `functions-parts/super-filter/` - Функции для фильтра
+- `functions-parts/_ajax.php` - Основной файл с ajax запросами
+- `functions-parts/_assets.php` - Подключение стилей и скриптов
+- `functions-parts/_breadcrumbs.php` - Хлебные крошки
+- `functions-parts/_custom-functions.php` - Универсальные функции
+- `functions-parts/_hooks.php` - Хуки
+- `functions-parts/_post-types-registration.php` - Регистрация пост тайпов
+- `functions-parts/_taxonomies-registration.php` - Регистрация таксономий
+- `functions-parts/Mobile_Detect.php` - Определение типа устройств
+
+## Импорт:
+
+##### HTML компоненты
+
+```js
 // Подключить компонент, передать значение
-@@include('html/head.html',{
+@@include('modules/header.html',{
 "title":"Главная"
 })
 
-//Получить значение
+//Получить значение в компоненте modules/header.html
 @@title
 ```
 
-## CSS/SCSS файлы:
-``` scss
-// Подключить файл
-@import "libs/swiper.min";
+##### Инлайновые SVG
 
+```js
+// вставить инлайновый svg в html, не загромождая код.
+@@include('img/example.svg')
 ```
 
-## JS файлы:
-``` js
+##### CSS файлы
+
+```scss
+@import "modules/example";
+```
+
+##### JS файлы
+
+```js
 // Подключить файл, выполнить функцию
 import * as functions from "./modules/functions.js";
 functions.isWebp();
 
 // Подключить библиотеку
-import Swiper, { Navigation, Pagination } from 'swiper';
+import Swiper, { Navigation, Pagination } from "swiper";
 const swiper = new Swiper();
 ```
+
+## Правила работы
+
+При работе из переменными и миксинами в модулях стилей для компиляции необходимо подключать @import "../core";
+
+Для автоматического подключения шрифтов из папки dev/fonts начертания в имени файла должны быть разделены через слеш (например, Golos-bold.ttf, Golos-regular.ttf), при запуске gulp в папке dev/styles/partitials/ сгенерируется fonts.scss, если файл уже существует, для обновления нужно его удалить.
+
+В функции @@include есть особый режим @@loop, который принимает вторым аргументом массив объектов и повторяет элемент столько раз, сколько объектов есть в массиве. То есть можно создать, например, слайдер с разными картинками, скормив функции @@loop массив путей к картинкам. ВАЖНОЕ ОГРАНИЧЕНИЕ! loop не работает внутри includ'а - только в корневых файлах.
+
+Старайтесь дробить свой код на как можно большее количество компонентов. Так вам будет удобнее разрабатывать свои проекты. В директории modules можно создавать вложенные директории, в которых хранить шаблоны отдельного компонента (например, слайдера).
+
+## Настройки для Wordpress
+
+#### functions.php
+
+1. Подключение файлов из functions-parts/
+   - `Mobile_Detect` - функция определения типа устройства
+   - `_assets` - подключение стилей и скриптов
+   - `_post-types-registration` - регистрация пост тайпов
+   - `_taxonomies-registration` - регистрация таксономий
+   - `_breadcrumbs` - настройка хлебных крошек
+   - `_ajax` - общий файл аякс запросов, подключение с директории ajax/
+   - `_hooks` - различные хуки
+   - `_custom-functions` - универсальные функции
+2. Удаление "мусора"
+   2.1 Отключение емодзи в WordPress (Скрипт создает дополнительный HTTP-запрос, который увеличивает общее время загрузки страницы и замедляет работу вашего сайта)
+   2.2 Удаление глобальных встроенных стилей WP
+   2.3 Удаление фильтра render_block, добавляющий лишнее
+   2.4 Отменить регистрацию стилей CF7 и Gutenberg
+3. Удаление пунктов меню в админке
+4. Поддержка SVG
+5. Регистрация
+   5.1 Регистрация меню
+   5.2 Регистрация обложки для постов/страниц
+   5.3 Кастомное WP меню
+   5.4 Регистрация нового размера изображений
+6. Стилизация админ-панели
+   6.1 Добавить CSS стили
+   6.2 Добавить Фавикон
+   6.3 Изменение текста в подвале
+   6.4 Изменение внутреннего логотипа
+   6.5 Меняем логотип, его ссылку и title атрибут на странице входа
+   6.6 Изменение ссылки в логотипе
+   6.7 Изменяем атрибут title у ссылки логотипа
+7. Редирект
+   7.1 Редирект из url верхнего регистра в url нижнего регистра
+8. Безопасность
+   8.1 Полное Удаление версии WP
+   8.2 Удаление параметра ver в добавляемых скриптах и стилях
+   8.3 Авто удаление файлов license.txt и readme.html
+   8.4 Зашифровать логин и пароль во время передачи их серверу
+   8.5 SSL в админской части сайта
+   8.6 Отключить вывод ошибок на странице авторизации
+   8.7 Отключить возможность редактировать файлы в админке для тем, плагинов
+   8.8 Закрыть возможность публикации через xmlrpc.php

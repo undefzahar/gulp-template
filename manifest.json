@@ -1,6 +1,6 @@
 {
-    "name": "SmartPoint Intranet",
-    "short_name": "Intranet",
+    "name": "Template name",
+    "short_name": "Template name",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#101021",

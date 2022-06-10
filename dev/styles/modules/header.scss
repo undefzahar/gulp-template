@@ -8,7 +8,7 @@
 	-webkit-backdrop-filter: blur(4rem);
 	backdrop-filter: blur(4rem);
 	z-index: 99;
-	background-color: #000;
+	background-color: $black;
 
 	&--hide {
 		transform: translate(0, -100%);

@@ -1,27 +1,50 @@
 @import "../core";
 
 .example {
-	background-color: rgb(229, 229, 229);
+	background-color: #f0f4f6;
  
-	.container {
-	  background-color: rgb(177, 177, 177);
+	h2 {
+		max-width: 80rem;
 	}
- 
-	&__title {
-	  text-align: center;
-	  font-size: 3.6rem;
+
+	p {
+		max-width: 60rem;
 	}
- 
-	&__title + &__wrap {
-	  margin-top: 2rem;
+
+	h2 + p {
+		margin-top: 2rem;
+	}
+
+	h2 + &__wrap {
+	  margin-top: 4rem;
+	}
+
+	p + &__wrap,
+	&__wrap + p {
+		margin-top: 4rem;
+	}
+
+	&__wrap + h2 {
+		margin-top: 8rem;
+	}
+
+	&__wrap + &__wrap {
+		margin-top: 2rem;
 	}
  
 	&__item {
 		background: #fff;
-		padding: 2rem;
-		border: .1rem solid #000;
+		border-radius: .6rem;
+		overflow: hidden;
+		box-shadow: 0 1px 2px rgb(0 0 0 / 15%), 0 2px 8px rgb(0 0 0 / 10%);
 
 		&-img {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			max-height: 30rem;
+			overflow: hidden;
+
 			img {
 				width: 100%;
 				height: 100%;
@@ -29,8 +52,8 @@
 			}
 		}
 
-		&-img + &-title {
-			margin-top: 2rem;
+		&-wrap {
+			padding: 2rem;
 		}
 	
 		&-title {
@@ -43,7 +66,6 @@
 		}
 	
 		&-descr {
-			font-size: 1.8rem;
 			color: rgb(46, 46, 46);
 		}
 	}

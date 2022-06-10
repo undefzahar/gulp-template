@@ -1,10 +1,10 @@
 @import "core";
-@import "fonts";
-
+@import "partitials/fonts";
 @import "partitials/base";
-@import "partitials/bttns";
 @import "partitials/typography";
+@import "partitials/bttns";
 
+// Modules
 @import "modules/header";
 
 @import "modules/readme";

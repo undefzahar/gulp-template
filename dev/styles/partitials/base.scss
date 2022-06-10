@@ -1,9 +1,11 @@
 @import "../core";
-@import "typography";
-@import "bttns";
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: Golos, sans-serif;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 
   &.menu-open {
     overflow: hidden;
@@ -125,7 +127,8 @@ section {
 }
 
 main {
-  padding-top: 7.4rem;
+  padding-top: 8rem;
+  flex: 1;
 }
 
 
@@ -140,6 +143,10 @@ main {
   }
 }
 
+.tac {
+  text-align: center;
+  margin: 0 auto;
+}
 
 @media only screen and (min-width: 1024px) {
   .grid-2,
