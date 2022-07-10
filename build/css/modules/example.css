@@ -1,0 +1,82 @@
+.example {
+  background-color: #f0f4f6;
+}
+
+.example h2 {
+  max-width: 80rem;
+}
+
+.example p {
+  max-width: 60rem;
+}
+
+.example h2 + p {
+  margin-top: 2rem;
+}
+
+h2 + .example__wrap {
+  margin-top: 4rem;
+}
+
+p + .example__wrap,
+.example__wrap + p {
+  margin-top: 4rem;
+}
+
+.example__wrap + h2 {
+  margin-top: 8rem;
+}
+
+.example__wrap + .example__wrap {
+  margin-top: 2rem;
+}
+
+.example__item {
+  background: #fff;
+  border-radius: 0.6rem;
+  overflow: hidden;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15), 0 2px 8px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15), 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.example__item-img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  max-height: 30rem;
+  overflow: hidden;
+}
+
+.example__item-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.example__item-wrap {
+  padding: 2rem;
+}
+
+.example__item-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+
+.example__item-title + .example__item-descr {
+  margin-top: 0.8rem;
+}
+
+.example__item-descr {
+  color: rgb(46, 46, 46);
+}
+
+.example__bttn {
+  margin-top: 2rem;
+}

@@ -225,7 +225,7 @@
 	}
 
 
-# 8. Безопастность
+# 8. Безопасность
 	# 8.1 Полное Удаление версии WP
 	remove_action('wp_head', 'wp_generator'); // из заголовка
 	add_filter('the_generator', '__return_empty_string'); // из фидов и URL
