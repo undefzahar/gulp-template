@@ -9,6 +9,7 @@
 	backdrop-filter: blur(4rem);
 	z-index: 99;
 	background-color: $black;
+	transition: .2s linear;
 
 	&--hide {
 		transform: translate(0, -100%);

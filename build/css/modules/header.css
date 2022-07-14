@@ -7,6 +7,9 @@
   backdrop-filter: blur(4rem);
   z-index: 99;
   background-color: #191919;
+  -webkit-transition: 0.2s linear;
+  -o-transition: 0.2s linear;
+  transition: 0.2s linear;
 }
 
 .header--hide {
@@ -99,7 +102,7 @@
   border-top: 0.1rem solid rgba(114, 117, 152, 0.2);
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 992px) {
   .header__burger {
     display: none;
   }
@@ -130,7 +133,7 @@
   }
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 992px) {
   body.menu-open .header__logo {
     -webkit-filter: invert(1);
     filter: invert(1);

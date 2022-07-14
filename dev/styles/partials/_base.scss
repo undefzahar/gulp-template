@@ -1,5 +1,25 @@
 @import "../core";
 
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  // Set global fonts here
+}
+
+* {
+  position: relative;
+}
+
+html {
+  font-size: 10px;
+  background-color: $bgColor;
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: Golos, sans-serif;
 
@@ -11,30 +31,7 @@ body {
     overflow: hidden;
     height: 100vh;
   }
-}
 
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  outline: none;
-
-  // Set global fonts here
-}
-
-* {
-  position: relative;
-  transition: 0.2s ease-in-out;
-}
-
-html {
-  // MAIN REM VALUE
-  font-size: 10px;
-}
-
-body {
   &.noscroll {
     height: 100vh;
     overflow: hidden;
@@ -45,11 +42,12 @@ body {
   display: none !important;
 }
 
-.container {
+.container,
+[class*="__container"] {
   margin: 0 auto;
   width: 100%;
-  max-width: 122rem;
-  padding: 0 2rem;
+  max-width: rem($maxWidthContainer);
+  padding: 0 rem(calc($containerPadding/2));
 }
 
 section {
@@ -59,7 +57,7 @@ section {
 }
 
 .grid-2 {
-  @include minw($sm-tablet) {
+  @include minw($tablet) {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -74,7 +72,7 @@ section {
   }
 
 
-  @include minw($sm-tablet) {
+  @include minw($tablet) {
     & > div {
       width: calc(50% - .75rem);
       
@@ -86,7 +84,7 @@ section {
 }
 
 .grid-4 {
-  @include minw($sm-tablet) {
+  @include minw($tablet) {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -101,7 +99,7 @@ section {
   }
 
 
-  @include minw($sm-tablet) {
+  @include minw($tablet) {
     & > div {
       width: calc(50% - .5rem);
       

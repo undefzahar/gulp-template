@@ -34,7 +34,7 @@ function init_post_types()
         'menu_position' => 4,
         'menu_icon' => null,
         'hierarchical' => true,
-        'supports' => array('title', 'author', 'revisions'), // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
+        'supports' => array('title', 'editor', 'author', 'revisions'), // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
         'taxonomies' => array(),
         'has_archive' => true,
         'rewrite' => array('slug' => 'news-post'),
@@ -42,7 +42,7 @@ function init_post_types()
         'menu_icon' => 'dashicons-analytics'
     ));
 
-    // // Example
+    // // Example without permalink
     // register_post_type('reviews', array(
     //     'label' => null,
     //     'labels' => array(
