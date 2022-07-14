@@ -6,8 +6,39 @@
 	align-items: center;
 	justify-content: center;
 	color: #fff;
-	background-color: #000;
-	padding: 1rem 2rem;
-	border-radius: .8rem;
+	background-color: $bttnColor;
+	padding: 2rem 3.6rem;
+	border-radius: 1.8rem;
 	font-size: 1.6rem;
+	border: none;
+	cursor: pointer;
+}
+
+.bttn-border {
+	padding: 1.9rem 3.5rem;
+	background-color: transparent;
+	border: 1px solid $bttnColor;
+	color: $bttnColor;
+}
+
+.bttn-white {
+	background-color: #fff;
+	color: $bttnColor;
+}
+
+.bttn[disabled] {
+	opacity: .7;
+	cursor: default;
+}
+
+.bttn--red {
+	background-color: $bttnSecondColor;
+}
+
+.bttn-loading,
+.wpcf7 .wpcf7-form.submitting .wpcf7-submit {
+	background-image: url(../img/general/spinner.svg);
+	background-repeat: no-repeat!important;
+	background-position: center!important;
+	color: transparent;
 }
