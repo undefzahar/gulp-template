@@ -1,42 +1,22 @@
-// JS fragment import example
-import * as functions from "./modules/functions.js";
-functions.isWebp();
-
-
-// NPM Swiper installation example
-
-/*
-import Swiper, { Navigation, Pagination } from 'swiper';
-
-// init Swiper:
-const swiper = new Swiper('.swiper', {
-	// configure Swiper to use modules
-	modules: [Navigation, Pagination],
-	...
-});
-*/
-
-
-// JS fragment import example
-
-var mobile = window.matchMedia('(min-width: 0px) and (max-width: 768px)');
-var tablet = window.matchMedia('(min-width: 769px) and (max-width: 1023px)');
-var desktop = window.matchMedia('(min-width: 1023px) and (max-width: 1279px)'); // Enable (for mobile)
-var desktop_pc = window.matchMedia('(min-width: 1280px)');
-
-
 // ANCHOR VARIABLES
 // ==============================================  
 let isDesk = $('body').hasClass('desktop'),
 	isIE = $('body').hasClass('isIe'),
 	menuOpen = false;
 
-// ANCHOR HEADER SCROLL LISTENER
-// ==============================================  
 let st = $(window).scrollTop(),
 	prevSt = st;
 
 window.st = st;
+
+
+// ANCHOR HEADER SCROLL LISTENER
+// ==============================================  
+var mobile = window.matchMedia('(min-width: 0px) and (max-width: 768px)');
+var tablet = window.matchMedia('(min-width: 769px) and (max-width: 1023px)');
+var desktop = window.matchMedia('(min-width: 1023px) and (max-width: 1279px)'); // Enable (for mobile)
+var desktop_pc = window.matchMedia('(min-width: 1280px)');
+
 
 // hide header if page was alredy scrolled after loading
 

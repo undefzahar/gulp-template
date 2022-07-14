@@ -2,6 +2,14 @@
 
 .example {
 	background-color: #f0f4f6;
+
+	.container {
+		& > h2,
+		& > h3,
+		& > p {
+			margin: 3.5rem 0;
+		}
+	}
  
 	h2 {
 		max-width: 80rem;
@@ -9,27 +17,6 @@
 
 	p {
 		max-width: 60rem;
-	}
-
-	h2 + p {
-		margin-top: 2rem;
-	}
-
-	h2 + &__wrap {
-	  margin-top: 4rem;
-	}
-
-	p + &__wrap,
-	&__wrap + p {
-		margin-top: 4rem;
-	}
-
-	&__wrap + h2 {
-		margin-top: 8rem;
-	}
-
-	&__wrap + &__wrap {
-		margin-top: 2rem;
 	}
  
 	&__item {
@@ -53,7 +40,7 @@
 		}
 
 		&-wrap {
-			padding: 2rem;
+			@include adaptiv-value("padding", 20, 10, 1);
 		}
 	
 		&-title {

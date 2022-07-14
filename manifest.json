@@ -8,42 +8,42 @@
     "orientation": "portrait-primary",
     "icons": [
         {
-            "src": "/build/img/favicon.svg",
+            "src": "/build/img/general/favicon.svg",
             "type": "image/png",
             "sizes": "72x72"
         },
         {
-            "src": "/build/img/favicon.svg",
+            "src": "/build/img/general/favicon.svg",
             "type": "image/png",
             "sizes": "96x96"
         },
         {
-            "src": "/build/img/favicon.svg",
+            "src": "/build/img/general/favicon.svg",
             "type": "image/png",
             "sizes": "128x128"
         },
         {
-            "src": "/build/img/favicon.svg",
+            "src": "/build/img/general/favicon.svg",
             "type": "image/png",
             "sizes": "144x144"
         },
         {
-            "src": "/build/img/favicon.svg",
+            "src": "/build/img/general/favicon.svg",
             "type": "image/png",
             "sizes": "152x152"
         },
         {
-            "src": "/build/img/favicon.svg",
+            "src": "/build/img/general/favicon.svg",
             "type": "image/png",
             "sizes": "192x192"
         },
         {
-            "src": "/build/img/favicon.svg",
+            "src": "/build/img/general/favicon.svg",
             "type": "image/png",
             "sizes": "384x384"
         },
         {
-            "src": "/build/img/favicon.svg",
+            "src": "/build/img/general/favicon.svg",
             "type": "image/png",
             "sizes": "512x512",
             "purpose": "any maskable"

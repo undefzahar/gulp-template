@@ -73,7 +73,7 @@ body.noscroll {
   margin: 0 auto;
   width: 100%;
   max-width: 117rem;
-  padding: 0 2rem;
+  padding: 0 1.5rem;
 }
 
 section {
@@ -82,12 +82,9 @@ section {
   padding: 6rem 0;
 }
 
-.grid-2 > div + .grid-2 > div {
-  margin-top: 1.5rem;
-}
-
-.grid-4 > div + .grid-4 > div {
-  margin-top: 1rem;
+.tac {
+  text-align: center;
+  margin: 0 auto;
 }
 
 main {
@@ -97,43 +94,42 @@ main {
           flex: 1;
 }
 
+[class*=grid] + [class*=grid] {
+  margin-top: 5rem;
+}
+
 .grid-2 > div:not(:first-child),
 .grid-2 > a:not(:first-child),
 .grid-3 > div:not(:first-child),
 .grid-3 > a:not(:first-child),
 .grid-4 > div:not(:first-child),
 .grid-4 > a:not(:first-child) {
-  margin-top: 2rem;
-}
-
-.tac {
-  text-align: center;
-  margin: 0 auto;
+  margin-top: 5rem;
 }
 
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-style: normal;
   line-height: 120%;
   color: #000;
 }
 
 input::-moz-placeholder, textarea::-moz-placeholder {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-style: normal;
   line-height: 120%;
   color: #000;
 }
 
 input:-ms-input-placeholder, textarea:-ms-input-placeholder {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-style: normal;
   line-height: 120%;
   color: #000;
 }
 
 input::-ms-input-placeholder, textarea::-ms-input-placeholder {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-style: normal;
   line-height: 120%;
   color: #000;
@@ -154,7 +150,7 @@ input,
 button,
 input::placeholder,
 textarea::placeholder {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-style: normal;
   line-height: 120%;
   color: #000;
@@ -169,7 +165,7 @@ h1 {
 .h2,
 h2 {
   font-size: 2.8rem;
-  line-height: 1.15;
+  line-height: 1.2;
 }
 
 .h3,
@@ -197,10 +193,41 @@ p {
       -ms-flex-pack: center;
           justify-content: center;
   color: #fff;
-  background-color: #000;
-  padding: 1rem 2rem;
-  border-radius: 0.8rem;
+  background-color: rgb(53, 179, 55);
+  padding: 2rem 3.6rem;
+  border-radius: 1.8rem;
   font-size: 1.6rem;
+  border: none;
+  cursor: pointer;
+}
+
+.bttn-border {
+  padding: 1.9rem 3.5rem;
+  background-color: transparent;
+  border: 1px solid rgb(53, 179, 55);
+  color: rgb(53, 179, 55);
+}
+
+.bttn-white {
+  background-color: #fff;
+  color: rgb(53, 179, 55);
+}
+
+.bttn[disabled] {
+  opacity: 0.7;
+  cursor: default;
+}
+
+.bttn--red {
+  background-color: rgb(210, 59, 59);
+}
+
+.bttn-loading,
+.wpcf7 .wpcf7-form.submitting .wpcf7-submit {
+  background-image: url(../img/general/spinner.svg);
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  color: transparent;
 }
 
 .header {
@@ -319,33 +346,18 @@ p {
   background-color: #f0f4f6;
 }
 
+.example .container > h2,
+.example .container > h3,
+.example .container > p {
+  margin: 3.5rem 0;
+}
+
 .example h2 {
   max-width: 80rem;
 }
 
 .example p {
   max-width: 60rem;
-}
-
-.example h2 + p {
-  margin-top: 2rem;
-}
-
-h2 + .example__wrap {
-  margin-top: 4rem;
-}
-
-p + .example__wrap,
-.example__wrap + p {
-  margin-top: 4rem;
-}
-
-.example__wrap + h2 {
-  margin-top: 8rem;
-}
-
-.example__wrap + .example__wrap {
-  margin-top: 2rem;
 }
 
 .example__item {
@@ -378,7 +390,7 @@ p + .example__wrap,
 }
 
 .example__item-wrap {
-  padding: 2rem;
+  padding: 20px;
 }
 
 .example__item-title {
@@ -400,11 +412,45 @@ p + .example__wrap,
 
 .footer {
   background-color: #191919;
-  padding: 4rem 0;
+  padding: 6rem 0;
+}
+
+.footer p {
   color: #fff;
 }
 
 @media only screen and (min-width: 576px) {
+  .grid-2 > div,
+  .grid-2 > a,
+  .grid-3 > div,
+  .grid-3 > a,
+  .grid-4 > div,
+  .grid-4 > a {
+    width: calc(50% - 2.5rem);
+  }
+
+  .grid-2 > div:nth-child(-n+2),
+  .grid-2 > a:nth-child(-n+2),
+  .grid-3 > div:nth-child(-n+2),
+  .grid-3 > a:nth-child(-n+2),
+  .grid-4 > div:nth-child(-n+2),
+  .grid-4 > a:nth-child(-n+2) {
+    margin-top: 0;
+  }
+
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+
   .h1,
   h1 {
     font-size: calc(3.2rem + 8 * (100vw - 375px) / 625);
@@ -423,69 +469,33 @@ p + .example__wrap,
   }
 }
 
-@media only screen and (min-width: 768px) {
-  .grid-2 {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-
-  .grid-2 > div {
-    width: calc(50% - 0.75rem);
-  }
-
-  .grid-2 > div:nth-child(-n+2) {
-    margin-top: 0;
-  }
-
-  .grid-4 {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-
-  .grid-4 > div {
-    width: calc(50% - 0.5rem);
-  }
-
-  .grid-4 > div:nth-child(-n+2) {
-    margin-top: 0;
-  }
-}
-
 @media only screen and (min-width: 992px) {
-  .grid-2 {
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-  }
-
+  .grid-3,
   .grid-4 {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
   }
 
-  .grid-4 > div {
-    width: calc(25% - 0.75rem);
+  .grid-3 > div,
+  .grid-3 > a,
+  .grid-4 > div,
+  .grid-4 > a {
+    width: calc(33.33% - 3.3333333333rem);
   }
 
-  .grid-4 > div:nth-child(-n+4) {
+  .grid-3 > div:nth-child(-n+3),
+  .grid-3 > a:nth-child(-n+3),
+  .grid-4 > div:nth-child(-n+3),
+  .grid-4 > a:nth-child(-n+3) {
     margin-top: 0;
   }
 
-  .grid-4 > div:not(:nth-child(4n+4)) {
-    margin-right: 1rem;
+  .grid-3 > div:not(:nth-child(3n+3)),
+  .grid-3 > a:not(:nth-child(3n+3)),
+  .grid-4 > div:not(:nth-child(3n+3)),
+  .grid-4 > a:not(:nth-child(3n+3)) {
+    margin-right: 5rem;
   }
 
   .h1,
@@ -539,51 +549,10 @@ p + .example__wrap,
   }
 }
 
-@media only screen and (min-width: 1024px) {
-  .grid-2,
-  .grid-3,
-  .grid-4 {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-  }
-
-  .grid-2 {
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-
-  .grid-2 > div,
-  .grid-2 > a {
-    width: calc(50% - 1.2rem);
-  }
-
-  .grid-2 > div:nth-child(-n+2),
-  .grid-2 > a:nth-child(-n+2) {
-    margin-top: 0;
-  }
-
-  .grid-3 > div,
-  .grid-3 > a {
-    width: calc(33.33% - 1.6rem);
-  }
-
-  .grid-3 > div:nth-child(-n+3),
-  .grid-3 > a:nth-child(-n+3) {
-    margin-top: 0;
-  }
-
-  .grid-3 > div:not(:nth-child(3n+3)),
-  .grid-3 > a:not(:nth-child(3n+3)) {
-    margin-right: 2.4rem;
-  }
-
+@media only screen and (min-width: 1200px) {
   .grid-4 > div,
   .grid-4 > a {
-    width: calc(25% - 1.5rem);
+    width: calc(25% - 3.7500000001rem);
   }
 
   .grid-4 > div:nth-child(-n+4),
@@ -591,9 +560,20 @@ p + .example__wrap,
     margin-top: 0;
   }
 
+  .grid-4 > div:nth-child(4n+4),
+  .grid-4 > a:nth-child(4n+4) {
+    margin-right: 0;
+  }
+
   .grid-4 > div:not(:nth-child(4n+4)),
   .grid-4 > a:not(:nth-child(4n+4)) {
-    margin-right: 2rem;
+    margin-right: 5rem;
+  }
+}
+
+@media (max-width: 1170px) {
+  .example__item-wrap {
+    padding: calc(10px + 10 * ((100vw - 375px) / 795));
   }
 }
 

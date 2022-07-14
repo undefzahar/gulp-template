@@ -1,5 +1,8 @@
 .footer {
   background-color: #191919;
-  padding: 4rem 0;
+  padding: 6rem 0;
+}
+
+.footer p {
   color: #fff;
 }
